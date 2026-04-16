@@ -1,0 +1,79 @@
+:root {
+    --vermelho: #8B0000;
+    --off-white: #F9F7F2;
+    --texto: #1A2F23;
+}
+
+body {
+    background-color: var(--off-white);
+    color: var(--texto);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navbar {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 0.9;
+    color: var(--vermelho);
+    z-index: 2;
+}
+
+.hero-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background: url('SUA_IMAGEM_AQUI.jpg') no-repeat bottom right;
+    background-size: cover;
+    filter: grayscale(100%) contrast(110%) brightness(0.8); /* Efeito Gritty */
+    z-index: 1;
+}
+
+.artigos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 5% 10%;
+}
+
+.artigo-card {
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid #e0e0e0;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+    /* O JS vai aplicar a rotação inicial aleatória */
+}
+
+.artigo-card:hover {
+    transform: rotate(0deg) !important; /* Força o alinhamento */
+    border-color: var(--vermelho);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
