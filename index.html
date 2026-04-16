@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arquivos Psicanálise</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Arquivos Psicanálise | Da Dispersão à Ordem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,800;1,800&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-surface gritty-overlay">
 
-    <nav class="navbar">
-        <div class="nav-links">
-            <a href="#">Home</a>
+    <nav class="fixed top-0 w-full z-50 bg-[#fcf9f4]/80 backdrop-blur-xl border-b border-stone-200/20 flex justify-between items-center px-8 py-6">
+        <div class="logo">Arquivos Psicanálise</div>
+        <div class="hidden md:flex gap-12 items-center">
+            <a href="index.html" class="active">Home</a>
             <a href="#">Publicações</a>
             <a href="#">Biblioteca</a>
             <a href="#">Sobre</a>
-            <a href="#" class="locked">Escola 🔒</a>
-            <a href="#" class="locked">Login 🔒</a>
+            <a href="#">Escola 🔒</a>
         </div>
+        <button class="login-btn">Login 🔒</button>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Arquivos <br> Psicanálise</h1>
+    <header class="hero-section">
+        <div class="statue-bg"></div>
+        <div class="hero-text">
+            <h1>Arquivos<br><span class="italic">Psicanálise</span></h1>
+            <p class="manifesto-text">"A investigação do que nos constitui exige tempo e espaço."</p>
         </div>
-        <div class="hero-image"></div>
     </header>
 
-    <main class="artigos-container">
-        <div class="artigo-card">
-            <span class="tag">Ensaio</span>
-            <h3>O Fragmento e a Totalidade</h3>
-            <p>Uma investigação sobre a estética do inconsciente...</p>
-        </div>
-        <div class="artigo-card">
-            <span class="tag">Vídeo</span>
-            <h3>Freud e a Estátua</h3>
-            <p>O que os objetos no escritório revelam sobre a escuta...</p>
-        </div>
-        </main>
+    <main class="content-grid">
+        <article class="artigo-card">
+            <span class="tag">Volume IV • Teoria</span>
+            <h3>A Pulsão e seus Destinos</h3>
+            <p>Uma análise sobre a sublimação e a cultura.</p>
+            <a href="#">Ler o Arquivo →</a>
+        </article>
 
-    <footer>
-        <p>A investigação do que nos constitui exige tempo e espaço.</p>
-        <div class="social-links">
-            <a href="#">Instagram</a> / <a href="#">YouTube</a>
-        </div>
-    </footer>
+        <article class="artigo-card">
+            <span class="tag">Volume IX • Clínica</span>
+            <h3>O Silêncio como Ferramenta</h3>
+            <p>A técnica do silêncio na psicanálise contemporânea.</p>
+            <a href="#">Ler o Arquivo →</a>
+        </article>
+
+        <article class="artigo-card">
+            <span class="tag">Ensaio • História</span>
+            <h3>Cartas a Fliess: A Origem</h3>
+            <p>A correspondência que deu origem aos sonhos.</p>
+            <a href="#">Ler o Arquivo →</a>
+        </article>
+    </main>
 
     <script src="script.js"></script>
 </body>
