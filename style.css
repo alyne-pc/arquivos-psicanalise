@@ -1,79 +1,65 @@
 :root {
-    --vermelho: #8B0000;
-    --off-white: #F9F7F2;
-    --texto: #1A2F23;
+    --primary: #610000; /* Vermelho Profundo */
+    --surface: #fcf9f4; /* Off-white */
+    --text: #1c1c19;
 }
 
-body {
-    background-color: var(--off-white);
-    color: var(--texto);
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    overflow-x: hidden;
+/* Efeito Granulado (Gritty) */
+.gritty-overlay::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 99;
 }
 
-.navbar {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: var(--texto);
-    font-weight: bold;
+.logo {
+    font-family: 'Newsreader', serif;
+    font-weight: 800;
+    color: var(--primary);
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+    letter-spacing: -1px;
 }
 
-.hero {
-    height: 80vh;
+.hero-section {
+    height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0 10%;
     position: relative;
+    overflow: hidden;
+    background: #000; /* Fundo preto para a foto brilhar */
 }
 
-.hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    line-height: 0.9;
-    color: var(--vermelho);
-    z-index: 2;
-}
-
-.hero-image {
+.statue-bg {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 50%;
-    height: 100%;
-    background: url('SUA_IMAGEM_AQUI.jpg') no-repeat bottom right;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&q=80') no-repeat center right;
     background-size: cover;
-    filter: grayscale(100%) contrast(110%) brightness(0.8); /* Efeito Gritty */
+    filter: grayscale(100%) contrast(120%) brightness(0.4);
     z-index: 1;
 }
 
-.artigos-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    padding: 5% 10%;
+h1 {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(4rem, 10vw, 12rem);
+    color: var(--surface);
+    line-height: 0.8;
+    z-index: 2;
+    position: relative;
 }
 
 .artigo-card {
-    background: white;
-    padding: 2.5rem;
-    border: 1px solid #e0e0e0;
-    transition: all 0.5s ease-out;
-    cursor: pointer;
-    /* O JS vai aplicar a rotação inicial aleatória */
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #e5e2dd;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    /* O JS vai bagunçar isso */
 }
 
 .artigo-card:hover {
-    transform: rotate(0deg) !important; /* Força o alinhamento */
-    border-color: var(--vermelho);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    transform: rotate(0deg) scale(1.02) !important;
+    border-color: var(--primary);
+    z-index: 10;
 }
